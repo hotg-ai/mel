@@ -46,14 +46,10 @@ fn main() {
 
 #![cfg_attr(not(feature = "std"), no_std)]
 
-extern crate num;
+mod linspace;
+
 use num::{Float, FromPrimitive};
-
-extern crate hertz;
-extern crate apodize;
-
-extern crate itertools_num;
-use itertools_num::linspace;
+use linspace::{linspace, Linspace};
 
 macro_rules! f64_from_usize {
     ($val:expr) => {
@@ -100,8 +96,8 @@ pub struct MelScalingMatrixEnumerator<WindowIter> {
     row_index: usize,
     col_index: usize,
 
-    start_mels_iter: itertools_num::Linspace<f64>,
-    end_mels_iter: itertools_num::Linspace<f64>,
+    start_mels_iter: Linspace<f64>,
+    end_mels_iter: Linspace<f64>,
 
     // this gets set anew for every row
     window_start: usize,
