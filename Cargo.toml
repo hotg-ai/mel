@@ -12,8 +12,8 @@ version = "0.3.0"
 edition = "2018"
 
 [dependencies]
-apodize = "1.0"
-hertz = "0.3.0"
+apodize = { git = "https://github.com/hotg-ai/apodize", rev = "41baaee092a9b49e26442d946046a8c3ec3d9ccf" }
+hertz = {  git = "https://github.com/hotg-ai/hertz", rev = "707d6d3c239663f04cc22f33391fbe54833189db", default-features = false }
 num = { version = "0.4.0", default-features = false, features = ["libm"] }
 num-traits = { version = "0.2.14", default-features = false }
 
